@@ -11,6 +11,8 @@
             --accent-color: #6c757d;
             --border-color: #dee2e6;
             --link-color: #0078D4;
+            --status-bg: #fff3cd;
+            --status-text: #856404;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -56,6 +58,28 @@
             border-bottom: 1px solid var(--link-color);
         }
         
+        /* 💡 新增：總專案價值儀表板樣式 */
+        .metrics-summary {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 3.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .metrics-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color);
+            margin: 0 0 5px 0;
+        }
+        .metrics-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin: 0;
+        }
+
         /* 原有：專案區塊樣式 */
         .main-title {
             font-size: 1.2rem;
@@ -78,12 +102,29 @@
             font-weight: 600;
             margin: 0 0 0.5rem 0;
         }
+        
+        /* 💡 新增：預算與狀態排列樣式 */
+        .project-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
         .project-budget {
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--link-color);
-            margin-bottom: 1.5rem;
+            margin: 0;
         }
+        .status-badge {
+            background-color: var(--status-bg);
+            color: var(--status-text);
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
         .info-block {
             margin-bottom: 1.2rem;
         }
@@ -134,7 +175,7 @@
 
     <div class="container">
         
-        <!-- 💡 新增：個人品牌簡介頂部 -->
+        <!-- 💡 個人品牌簡介頂部 -->
         <header class="profile-header">
             <h1 class="profile-name">Max Liu</h1>
             <p class="profile-title">Solution Architect | Enterprise AI Solutions & Process Automation</p>
@@ -144,13 +185,30 @@
             </div>
         </header>
 
+        <!-- 💡 新增：Current Enterprise Projects 價值看板 -->
+        <div class="metrics-summary">
+            <h3 class="metrics-title">Total Portfolio Value</h3>
+            <p class="metrics-value">NT$1.4M+</p>
+        </div>
+
         <h2 class="main-title">Project Portfolio</h2>
 
         <!-- 專案 01 -->
         <section class="project-section">
             <div class="project-num">01.</div>
             <h2 class="project-title">Scholarship AI Consultation System</h2>
-            <div class="project-budget">NT$1.1M</div>
+            
+            <!-- 💡 新增：預算與實作狀態區塊 -->
+            <div class="project-meta">
+                <div class="project-budget">NT$1.1M</div>
+                <div class="status-badge">🔄 Implementation In Progress</div>
+            </div>
+
+            <!-- 💡 新增：角色欄位 -->
+            <div class="info-block">
+                <div class="info-label">Role</div>
+                <p class="info-content">Solution Architect / Technical Lead</p>
+            </div>
 
             <div class="info-block">
                 <div class="info-label">Challenge</div>
@@ -176,7 +234,18 @@
         <section class="project-section">
             <div class="project-num">02.</div>
             <h2 class="project-title">IT Demand Management & Governance Platform</h2>
-            <div class="project-budget">NT$300K</div>
+            
+            <!-- 💡 新增：預算與實作狀態區塊 -->
+            <div class="project-meta">
+                <div class="project-budget">NT$300K</div>
+                <div class="status-badge">🔄 Implementation In Progress</div>
+            </div>
+
+            <!-- 💡 新增：角色欄位 -->
+            <div class="info-block">
+                <div class="info-label">Role</div>
+                <p class="info-content">Solution Architect</p>
+            </div>
 
             <div class="info-block">
                 <div class="info-label">Challenge</div>
@@ -198,7 +267,7 @@
 
         <!-- 💡 新增：頁尾區塊 -->
         <footer>
-            <p>© 2026 Max Liu.Built with GitHub Pages.</p>
+            <p>© 2026 Max Liu. Built with GitHub Pages.</p>
         </footer>
 
     </div>
