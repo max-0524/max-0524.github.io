@@ -18,18 +18,52 @@
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
         .container {
             max-width: 700px;
             margin: 0 auto;
         }
-        .main-title {
-            font-size: 2rem;
+        /* 新增：個人簡介區塊樣式 */
+        .profile-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
+        }
+        .profile-name {
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 3rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.5px;
+        }
+        .profile-title {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin: 0 0 1.5rem 0;
+            font-weight: 400;
+        }
+        .profile-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        .profile-links a:hover {
+            color: var(--link-color);
+            border-bottom: 1px solid var(--link-color);
+        }
+        
+        /* 原有：專案區塊樣式 */
+        .main-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            color: var(--accent-color);
         }
         .project-section {
             margin-bottom: 4rem;
@@ -84,12 +118,33 @@
             border-top: 1px solid var(--border-color);
             margin: 3rem 0;
         }
+
+        /* 新增：頁尾樣式 */
+        footer {
+            margin-top: 6rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1 class="main-title">Project Portfolio</h1>
+        
+        <!-- 💡 新增：個人品牌簡介頂部 -->
+        <header class="profile-header">
+            <h1 class="profile-name">Max Liu</h1>
+            <p class="profile-title">Solution Architect | Enterprise AI Solutions & Process Automation</p>
+            <div class="profile-links">
+                <a href="https://www.linkedin.com/in/maxliu0524/" target="_blank">LinkedIn</a>
+                <a href="mailto:im.max.liu@gmail.com">Email</a>
+            </div>
+        </header>
+
+        <h2 class="main-title">Project Portfolio</h2>
 
         <!-- 專案 01 -->
         <section class="project-section">
@@ -140,6 +195,12 @@
             
             <a href="it-demand-governance.html" class="read-more">View Full Case Study →</a>
         </section>
+
+        <!-- 💡 新增：頁尾區塊 -->
+        <footer>
+            <p>© 2026 Max Liu.Built with GitHub Pages.</p>
+        </footer>
+
     </div>
 
 </body>
